@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adebowale Jasmine - Portfolio</title>
 
+    <!-- google-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,80 +26,255 @@
 
     <!-- header -->
     <header>
-
         <!-- NavBar -->
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <a href="#home" class="logo">My Portfolio</a>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars menu-icon"></i>
+                    <i class="fas fa-times close-icon hidden"></i>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <div id="home" class="hero">
-        <h1>Hi, I'm Adebowale Jasmine</h1>
-        <p>Creative Web Developer</p>
-        <button>Download CV</button>
-    </div>
+    <!-- hero -->
+    <div class="hero" id="home">
 
-    <!-- Profile  -->
-    <div class="profile">
-        <img src="./asset/A girl.jpg" alt="Profile Picture" title="Adebowale Jasmine" width="150" />
-        <h1>Adebowale Jasmine</h1>
-        <p>
-            Passionate front-end developer focused oncreating beautiful, user-friendly websites.
-        </p>
+        <!-- hero-heading -->
+        <div class="hero-heading">
 
-        <!-- social-links -->
-        <div class="social-links">
-            <a href="https://github.com/Adeife004" title="GitHub Profile">GitHub</a>
-            <a href="https://www.tiktok.com/@__jahsmine__" title="TikTok Profile">TikTok</a>
-            <a href="https://instagram.com/__jahsmine__xx" title="Instagram Profile">Instagram</a>
+            <!-- hero-text -->
+            <div class="hero-text">
+                <h1>Hi, I'm Adebowale <br> <span>Jasmine</span> </h1>
+                <p>Passionate front-end developer focused oncreating beautiful, <br> user-friendly websites.</p>
+            </div>
+
+            <!-- hero-btn -->
+            <div class="hero-btn">
+                <button class="btn1">Download CV</button>
+                <button class="btn2">Contact Me</button>
+            </div>
+
+            <!-- hero-links -->
+            <div class="hero-links">
+
+                <!-- github -->
+                <div class="github">
+                    <a href="https://github.com/Adeife004" title="Github Profile"><i
+                            class="fa-brands fa-github"></i></a>
+                </div>
+
+                <!-- tiktok -->
+                <div class="tiktok">
+                    <a href="https://www.tiktok.com/@__jahsmine__" title="TikTok Profile"><i
+                            class="fa-brands fa-tiktok">
+                        </i> </a>
+                </div>
+
+                <!-- instagram -->
+                <div class="instagram">
+                    <a href="https://instagram.com/__jahsmine__xx" title="Instagram Profile"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
 
-        <!-- contact-btn -->
-        <button class="contact-btn">Contact Me</button>
+        <!-- hero-image -->
+        <div class="hero-image">
+            <img src="./asset/A girl.jpg" alt="Profile Picture" title="Adebowale Jasmine" />
+        </div>
     </div>
 
     <!-- about -->
     <div id="about" class="about">
         <h2>About Me</h2>
-        <p>
-            Hello! I'm Adebowale Jasmine, a passionate front-end developer and UI/UX enthusiast with a strong background
-            in building beautiful, user-friendly, and responsive web applications. With a keen eye for design and a love
-            for clean, efficient code, I specialize in crafting seamless digital experiences that engage users and
-            enhance functionality.
 
-            Over the years, I have honed my skills in HTML, CSS, JavaScript, Vue.js, and React, allowing me to bring
-            creative visions to life. I enjoy problem-solving, staying updated with the latest web technologies, and
-            collaborating with teams to create impactful solutions.
+        <!-- about-container -->
+        <div class="about-container">
 
-            Beyond coding, I have a deep appreciation for design aesthetics, usability, and accessibility, ensuring that
-            every project I work on is both visually appealing and highly functional. My goal is to continue pushing the
-            boundaries of front-end development, contributing to innovative projects that make a difference.
+            <!-- about-image -->
+            <div class="about-image">
 
-            When I'm not coding, you’ll find me exploring new tech trends, traveling, or enjoying a cup of tea. I'm
-            always open to exciting opportunities, collaborations, and meaningful conversations. Let's create something
-            amazing together!
-        </p>
+                <div class="aboutImage">
+                    <img src="./asset/Jasmine.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- about-text -->
+            <div class="about-text">
+                <p>
+                    Hello! I'm Adebowale Jasmine, a passionate front-end developer and UI/UX enthusiast with a strong
+                    background
+                    in building beautiful, user-friendly, and responsive web applications. With a keen eye for design
+                    and a love
+                    for clean, efficient code, I specialize in crafting seamless digital experiences that engage users
+                    and
+                    enhance functionality.
+
+                    Over the years, I have honed my skills in HTML, CSS, JavaScript, Vue.js, and React, allowing me to
+                    bring
+                    creative visions to life. I enjoy problem-solving, staying updated with the latest web technologies,
+                    and
+                    collaborating with teams to create impactful solutions.
+
+                    Beyond coding, I have a deep appreciation for design aesthetics, usability, and accessibility,
+                    ensuring that
+                    every project I work on is both visually appealing and highly functional. My goal is to continue
+                    pushing the
+                    boundaries of front-end development, contributing to innovative projects that make a difference.
+                </p>
+            </div>
+        </div>
     </div>
 
     <!-- skills -->
     <div id="skills" class="skills">
         <h2>My Skills</h2>
-        <ul>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>Vue.js</li>
-            <li>React</li>
-            <li>UI/UX Design</li>
-            <li>Git & GitHub</li>
-        </ul>
+
+        <!-- skills-container -->
+        <div class="skills-container">
+
+            <!-- skills-content -->
+            <div class="skills-content">
+
+                <!-- skills-text -->
+                <div class="skills-text">
+
+                    <h3>Professional Skills</h3>
+                    <p>I build responsive, dynamic web applications with HTML, CSS, JavaScript, and Vue.js. Using modern
+                        CSS and JavaScript, I create interactive, user-friendly interfaces. With Vue.js, I develop
+                        scalable, high-performance apps. My focus is on clean, efficient, and engaging digital
+                        experiences. 🚀</p>
+                </div>
+
+                <!-- Skills Progress Section -->
+                <div class="skills-progress">
+
+                    <!-- HTML & CSS Container -->
+                    <div class="html-css">
+
+                        <!-- HTML Progress -->
+                        <div class="progress">
+
+                            <!-- progress-container -->
+                            <div class="progress-container">
+
+                                <!-- Icon & Label -->
+                                <div class="progress-content">
+                                    <i class="fa-brands fa-html5"></i>
+                                    <label for="html-progress">HTML</label>
+                                </div>
+
+                                <!-- Progress Percentage -->
+                                <div class="progress-content2">
+                                    <p>100%</p>
+                                </div>
+                            </div>
+
+                            <!-- progress-bar -->
+                            <div class="progress-bar">
+                                <progress id="html-progress" value="100" max="100"></progress>
+                            </div>
+                        </div>
+
+                        <!-- CSS Progress -->
+                        <div class="progress">
+
+                            <!-- Progress Container -->
+                            <div class="progress-container">
+
+                                <!-- Icon & Label -->
+                                <div class="progress-content">
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                    <label for="css-progress">CSS</label>
+                                </div>
+
+                                <!-- Progress Percentage -->
+                                <div class="progress-content2">
+                                    <p>90%</p>
+                                </div>
+                            </div>
+
+                            <!-- progress-bar -->
+                            <div class="progress-bar">
+                                <progress id="css-progress" value="90" max="100"></progress>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- JavaScript & Vue Container -->
+                    <div class="javascript-vue">
+
+                        <!-- JavaScript Progress -->
+                        <div class="progress">
+
+                            <!-- Progress Container -->
+                            <div class="progress-container">
+
+                                <!-- Icon & Label -->
+                                <div class="progress-content">
+                                    <i class="fa-brands fa-js"></i>
+                                    <label for="js-progress">JavaScript</label>
+                                </div>
+
+                                <!-- Progress Percentage -->
+                                <div class="progress-content2">
+                                    <p>80%</p>
+                                </div>
+                            </div>
+
+                            <!-- progress-bar -->
+                            <div class="progress-bar">
+                                <progress id="js-progress" value="80" max="100"></progress>
+                            </div>
+                        </div>
+
+                        <!-- Vue.js Progress -->
+                        <div class="progress">
+
+                            <!-- Progress Container -->
+                            <div class="progress-container">
+
+                                <!-- Icon & Label -->
+                                <div class="progress-content">
+                                    <i class="fa-brands fa-vuejs"></i>
+                                    <label for="vue-progress">Vue.js</label>
+                                </div>
+
+                                <!-- Progress Percentage -->
+                                <div class="progress-content2">
+                                    <p>70%</p>
+                                </div>
+                            </div>
+                            <!-- progress-bar -->
+                            <div class="progress-bar">
+                                <progress id="vue-progress" value="70" max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- skills-image -->
+            <div class="skills-image">
+
+                <!-- skillsImage -->
+                <div class="skillsImage">
+                    <img src="./asset/code.jpg" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- projects -->
@@ -96,39 +283,113 @@
 
         <!-- project-container -->
         <div class="project-container">
+
             <!-- project -->
-            <div class="project">
-                <h3>Project One</h3>
-                <p>A Responsive Login And Signup Page</p>
-                <a href="https://login-signup-peach.vercel.app/">View Project</a>
+            <div class="project-link">
+
+                <a href="https://login-signup-peach.vercel.app/">
+
+                    <!-- project -->
+                    <div class="project">
+
+                        <!-- project-image -->
+                        <div class="project-image">
+                            <img src="./asset/login&signup-form.png" alt="">
+                        </div>
+                        <h3>Project One</h3>
+                        <p>A Responsive Signup Page</p>
+                    </div>
+                </a>
             </div>
 
             <!-- project -->
-            <div class="project">
-                <h3>Project Two</h3>
-                <p>A Color Game built with JavaScript</p>
-                <a href="https://colorgame-blush.vercel.app/">View Project</a>
+            <div class="project-link">
+
+                <a href="https://colorgame-blush.vercel.app/">
+
+                    <!-- project -->
+                    <div class="project">
+
+                        <!-- project-image -->
+                        <div class="project-image">
+                            <img src="./asset/login img.png" alt="">
+                        </div>
+                        <h3>Project Two</h3>
+                        <p>A Responsive Login Page</p>
+                    </div>
+                </a>
             </div>
 
             <!-- project -->
-            <div class="project">
-                <h3>Project Three</h3>
-                <p>An Hotel Website</p>
-                <a href="https://vercel.com/adebowale-jasmines-projects/almond-hotel">View Project</a>
+            <div class="project-link">
+
+                <a href="https://vercel.com/adebowale-jasmines-projects/almond-hotel">
+
+                    <!-- project -->
+                    <div class="project">
+
+                        <!-- project-image -->
+                        <div class="project-image">
+                            <img src="./asset/login&signup-form.png" alt="">
+                        </div>
+                        <h3>Project Three</h3>
+                        <p>A Color Game built with JavaScript</p>
+                    </div>
+                </a>
             </div>
 
             <!-- project -->
-            <div class="project">
-                <h3>Project Four</h3>
-                <p>An Event Website</p>
-                <a href="https://vercel.com/adebowale-jasmines-projects/event">View Project</a>
+            <div class="project-link">
+
+                <a href="https://vercel.com/adebowale-jasmines-projects/event">
+
+                    <!-- project -->
+                    <div class="project">
+
+                        <!-- project-image -->
+                        <div class="project-image">
+                            <img src="./asset/login&signup-form.png" alt="">
+                        </div>
+                        <h3>Project Four</h3>
+                        <p>A Color Game built with JavaScript</p>
+                    </div>
+                </a>
             </div>
 
             <!-- project -->
-            <div class="project">
-                <h3>Project Five</h3>
-                <p>A Drama Group Form</p>
-                <a href="https://vercel.com/adebowale-jasmines-projects/cadg">View Project</a>
+            <div class="project-link">
+
+                <a href="https://vercel.com/adebowale-jasmines-projects/almond-hotel">
+
+                    <!-- project -->
+                    <div class="project">
+
+                        <!-- project-image -->
+                        <div class="project-image">
+                            <img src="./asset/almond-hotel.png" alt="">
+                        </div>
+                        <h3>Project Five</h3>
+                        <p>A Color Game built with JavaScript</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- project -->
+            <div class="project-link">
+
+                <a href="https://vercel.com/adebowale-jasmines-projects/event">
+
+                    <!-- project -->
+                    <div class="project">
+
+                        <!-- project-image -->
+                        <div class="project-image">
+                            <img src="./asset/color-game.png" alt="">
+                        </div>
+                        <h3>Project One</h3>
+                        <p>A Color Game built with JavaScript</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -208,7 +469,9 @@
         <p>&copy; 2025 Adebowale Jasmine. All rights reserved.</p>
         <p>Email: jasmine@example.com | Phone: +123 456 7890</p>
     </footer>
+
+    <!-- js script -->
+    <script src="script.js"></script>
 </body>
 
 </html>
-
