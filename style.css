@@ -138,21 +138,38 @@ nav ul li a:hover {
     gap: 10px;
 }
 
-.hero-btn button {
+.contact-btn {
     color: #fff;
     border-radius: 10px;
     font-size: 1rem;
     padding: 10px 30px;
     border: none;
     cursor: pointer;
+    text-decoration: none;
     transition: 0.3s ease-in-out;
 }
+
+.download-btn {
+    display: inline-block;
+    background: #2d336b;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+    background: #7886c7;
+}
+
 
 .hero-btn .btn1 {
     background: #2d336b;
 }
 
-.hero-btn .btn2 {
+.contact-btn {
     background: #7886c7;
 }
 
@@ -160,7 +177,7 @@ nav ul li a:hover {
     background: #7886c7;
 }
 
-.hero-btn .btn2:hover {
+.contact-btn:hover {
     background: #2d336b;
 }
 
@@ -766,40 +783,5 @@ footer p {
     footer p {
         font-size: 12px;
     }
+
 }
-
-/* @media (max-width: 480px) {
-    .nav-container {
-        padding: 10px 15px;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .hamburger {
-        font-size: 20px;
-    }
-
-    .nav-links {
-        top: 50px;
-    }
-} */
-
-/* @media (max-width: 320px) {
-    .nav-container {
-        padding: 8px 10px;
-    }
-
-    .logo {
-        font-size: 14px;
-    }
-
-    .hamburger {
-        font-size: 18px;
-    }
-
-    .nav-links {
-        top: 45px;
-    }
-} */
