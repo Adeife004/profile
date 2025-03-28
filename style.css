@@ -201,13 +201,15 @@ nav ul li a:hover {
 
 .instagram a,
 .tiktok a,
-.github a {
+.github a,
+.linkedin a {
     text-decoration: none;
 }
 
 .github,
 .tiktok,
-.instagram {
+.instagram,
+.linkedin {
     align-items: center;
     text-align: center;
     width: 30px;
@@ -219,6 +221,7 @@ nav ul li a:hover {
 
 .github:hover,
 .tiktok:hover,
+.linkedin:hover,
 .instagram:hover {
     background: #2d336b;
 }
