@@ -1,507 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon -->
     <link rel="shortcut icon" href="./asset/j-icon.png" type="image/x-icon">
 
     <!-- title -->
-    <title>Adebowale Jasmine - Portfolio</title>
+    <title>Loading...</title>
+    <style>
+        /* Loader Styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #fff2ff;
+            margin: 0;
+        }
 
-    <!-- google-font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+        .loader {
+            width: 44.8px;
+            height: 44.8px;
+            color: #554cb5;
+            position: relative;
+            background: radial-gradient(11.2px, currentColor 94%, #0000);
+        }
 
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .loader:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(10.08px at bottom right, #0000 94%, currentColor) top left,
+                        radial-gradient(10.08px at bottom left, #0000 94%, currentColor) top right,
+                        radial-gradient(10.08px at top right, #0000 94%, currentColor) bottom left,
+                        radial-gradient(10.08px at top left, #0000 94%, currentColor) bottom right;
+            background-size: 22.4px 22.4px;
+            background-repeat: no-repeat;
+            animation: loader 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+        }
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css" />
+        @keyframes loader {
+            33% {
+                inset: -11.2px;
+                transform: rotate(0deg);
+            }
+            66% {
+                inset: -11.2px;
+                transform: rotate(90deg);
+            }
+            100% {
+                inset: 0;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- header -->
-    <header>
-        <!-- NavBar -->
-        <nav>
-            <div class="nav-container">
-                <a href="#home" class="logo">My Portfolio</a>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars menu-icon"></i>
-                    <i class="fas fa-times close-icon hidden"></i>
-                </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <!-- Loader -->
+    <div class="loader"></div>
+
+    <!-- Redirect Script -->
+    <script>
+        setTimeout(function () {
+            window.location.href = "http://127.0.0.1:5500/portfolio.html"; 
+        }, 4000);
+    </script>
 
-    <!-- hero -->
-    <div class="hero" id="home">
-
-        <!-- hero-heading -->
-        <div class="hero-heading">
-
-            <!-- hero-text -->
-            <div class="hero-text">
-                <h1>Hi, I'm Adebowale <br> <span>Jasmine</span> </h1>
-                <p>Passionate front-end developer focused oncreating beautiful, <br> user-friendly websites.</p>
-            </div>
-
-            <!-- hero-btn -->
-            <div class="hero-btn">
-
-                <a href="./asset/ADEBOWALE_ABIODUN_JASMINE_CV.pdf" download="Adebowale_Jasmine_CV" class="download-btn">
-                    Download CV
-                </a>
-
-                <!-- contact btn -->
-                <a href="https://wa.me/message/AJTLJ3LZZCW7I1" target="_blank" class="contact-btn">
-                    Contact Me
-                </a>
-            </div>
-
-            <!-- hero-links -->
-            <div class="hero-links">
-
-                <!-- github -->
-                <div class="github">
-                    <a href="https://github.com/Adeife004" title="Github Profile"><i
-                            class="fa-brands fa-github"></i></a>
-                </div>
-
-                <!-- tiktok -->
-                <div class="tiktok">
-                    <a href="https://www.tiktok.com/@__jahsmine__" title="TikTok Profile"><i
-                            class="fa-brands fa-tiktok">
-                        </i> </a>
-                </div>
-
-                <!-- instagram -->
-                <div class="instagram">
-                    <a href="https://instagram.com/__jahsmine__xx" title="Instagram Profile"><i
-                            class="fa-brands fa-instagram"></i></a>
-                </div>
-
-                <!-- instagram -->
-                <div class="linkedin">
-                    <a href="https://www.linkedin.com/in/adebowale-jasmine-324171340/" title="Linkedin Profile"><i
-                            class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- hero-image -->
-        <div class="hero-image">
-            <img src="./asset/A girl.jpg" alt="Profile Picture" title="Adebowale Jasmine" />
-        </div>
-    </div>
-
-    <!-- about -->
-    <div id="about" class="about">
-        <h2>About Me</h2>
-
-        <!-- about-container -->
-        <div class="about-container">
-
-            <!-- about-image -->
-            <div class="about-image">
-
-                <div class="aboutImage">
-                    <img src="./asset/Jasmine.jpg" alt="">
-                </div>
-            </div>
-
-            <!-- about-text -->
-            <div class="about-text">
-                <p>
-                    Hello! I'm Adebowale Jasmine, a passionate front-end developer and UI/UX enthusiast with a strong
-                    background
-                    in building beautiful, user-friendly, and responsive web applications. With a keen eye for design
-                    and a love
-                    for clean, efficient code, I specialize in crafting seamless digital experiences that engage users
-                    and
-                    enhance functionality.
-
-                    Over the years, I have honed my skills in HTML, CSS, JavaScript, Vue.js, and React, allowing me to
-                    bring
-                    creative visions to life. I enjoy problem-solving, staying updated with the latest web technologies,
-                    and
-                    collaborating with teams to create impactful solutions.
-
-                    Beyond coding, I have a deep appreciation for design aesthetics, usability, and accessibility,
-                    ensuring that
-                    every project I work on is both visually appealing and highly functional. My goal is to continue
-                    pushing the
-                    boundaries of front-end development, contributing to innovative projects that make a difference.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- skills -->
-    <div id="skills" class="skills">
-        <h2>My Skills</h2>
-
-        <!-- skills-container -->
-        <div class="skills-container">
-
-            <!-- skills-content -->
-            <div class="skills-content">
-
-                <!-- skills-text -->
-                <div class="skills-text">
-
-                    <h3>Professional Skills</h3>
-                    <p>I build responsive, dynamic web applications with HTML, CSS, JavaScript, and Vue.js. Using modern
-                        CSS and JavaScript, I create interactive, user-friendly interfaces. With Vue.js, I develop
-                        scalable, high-performance apps. My focus is on clean, efficient, and engaging digital
-                        experiences. 🚀</p>
-                </div>
-
-                <!-- Skills Progress Section -->
-                <div class="skills-progress">
-
-                    <!-- HTML & CSS Container -->
-                    <div class="html-css">
-
-                        <!-- HTML Progress -->
-                        <div class="progress">
-
-                            <!-- progress-container -->
-                            <div class="progress-container">
-
-                                <!-- Icon & Label -->
-                                <div class="progress-content">
-                                    <i class="fa-brands fa-html5"></i>
-                                    <label for="html-progress">HTML</label>
-                                </div>
-
-                                <!-- Progress Percentage -->
-                                <div class="progress-content2">
-                                    <p>100%</p>
-                                </div>
-                            </div>
-
-                            <!-- progress-bar -->
-                            <div class="progress-bar">
-                                <progress id="html-progress" value="100" max="100"></progress>
-                            </div>
-                        </div>
-
-                        <!-- CSS Progress -->
-                        <div class="progress">
-
-                            <!-- Progress Container -->
-                            <div class="progress-container">
-
-                                <!-- Icon & Label -->
-                                <div class="progress-content">
-                                    <i class="fa-brands fa-css3-alt"></i>
-                                    <label for="css-progress">CSS</label>
-                                </div>
-
-                                <!-- Progress Percentage -->
-                                <div class="progress-content2">
-                                    <p>90%</p>
-                                </div>
-                            </div>
-
-                            <!-- progress-bar -->
-                            <div class="progress-bar">
-                                <progress id="css-progress" value="90" max="100"></progress>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- JavaScript & Vue Container -->
-                    <div class="javascript-vue">
-
-                        <!-- JavaScript Progress -->
-                        <div class="progress">
-
-                            <!-- Progress Container -->
-                            <div class="progress-container">
-
-                                <!-- Icon & Label -->
-                                <div class="progress-content">
-                                    <i class="fa-brands fa-js"></i>
-                                    <label for="js-progress">JavaScript</label>
-                                </div>
-
-                                <!-- Progress Percentage -->
-                                <div class="progress-content2">
-                                    <p>80%</p>
-                                </div>
-                            </div>
-
-                            <!-- progress-bar -->
-                            <div class="progress-bar">
-                                <progress id="js-progress" value="80" max="100"></progress>
-                            </div>
-                        </div>
-
-                        <!-- Vue.js Progress -->
-                        <div class="progress">
-
-                            <!-- Progress Container -->
-                            <div class="progress-container">
-
-                                <!-- Icon & Label -->
-                                <div class="progress-content">
-                                    <i class="fa-brands fa-vuejs"></i>
-                                    <label for="vue-progress">Vue.js</label>
-                                </div>
-
-                                <!-- Progress Percentage -->
-                                <div class="progress-content2">
-                                    <p>70%</p>
-                                </div>
-                            </div>
-                            <!-- progress-bar -->
-                            <div class="progress-bar">
-                                <progress id="vue-progress" value="70" max="100"></progress>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- skills-image -->
-            <div class="skills-image">
-
-                <!-- skillsImage -->
-                <div class="skillsImage">
-                    <img src="./asset/code.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- projects -->
-    <div id="projects" class="projects">
-        <h2>My Projects</h2>
-
-        <!-- project-container -->
-        <div class="project-container">
-
-            <!-- project -->
-            <div class="project-link">
-
-                <a href="https://event-woad-three.vercel.app/">
-
-                    <!-- project -->
-                    <div class="project">
-
-                        <!-- project-image -->
-                        <div class="project-image">
-                            <img src="./asset/event.png" alt="">
-                        </div>
-                        <h3>Tems Event</h3>
-                        <p>A Responsive Event Website</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- project -->
-            <div class="project-link">
-
-                <a href="https://login-signup-peach.vercel.app/">
-
-                    <!-- project -->
-                    <div class="project">
-
-                        <!-- project-image -->
-                        <div class="project-image">
-                            <img src="./asset/login img.png" alt="">
-                        </div>
-                        <h3>Login Page</h3>
-                        <p>A Responsive Login Page</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- project -->
-            <div class="project-link">
-
-                <a href="https://login-signup-peach.vercel.app/">
-
-                    <!-- project -->
-                    <div class="project">
-
-                        <!-- project-image -->
-                        <div class="project-image">
-                            <img src="./asset/login&signup-form.png" alt="">
-                        </div>
-                        <h3>SignUp Page</h3>
-                        <p>A Responsive SignUp Page</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- project -->
-            <div class="project-link">
-
-                <a href="https://cadg.vercel.app/">
-
-                    <!-- project -->
-                    <div class="project">
-
-                        <!-- project-image -->
-                        <div class="project-image">
-                            <img src="./asset/cadg.png" alt="">
-                        </div>
-                        <h3>CADG Form</h3>
-                        <p>A Responsive Drama Group Website</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- project -->
-            <div class="project-link">
-
-                <a href="https://almond-hotel.vercel.app/">
-
-                    <!-- project -->
-                    <div class="project">
-
-                        <!-- project-image -->
-                        <div class="project-image">
-                            <img src="./asset/almond-hotel.png" alt="">
-                        </div>
-                        <h3>Almond Hotel</h3>
-                        <p>A Responsive Hotel Website</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- project -->
-            <div class="project-link">
-
-                <a href="https://colorgame-blush.vercel.app/">
-
-                    <!-- project -->
-                    <div class="project">
-
-                        <!-- project-image -->
-                        <div class="project-image">
-                            <img src="./asset/color-game.png" alt="">
-                        </div>
-                        <h3>Color Game</h3>
-                        <p>A Responsive Color Game</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- testimonials -->
-    <div id="testimonials" class="testimonials">
-        <h2>What People Say</h2>
-
-        <!-- testimonial-container -->
-        <div class="testimonial-container">
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"Jasmine is a talented developer who consistently delivers exceptional work."</p>
-                <span>- Adebayo Kehinde, Software Engineer</span>
-            </div>
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"I've worked with Jasmine on multiple projects, and she's a true professional."</p>
-                <span>- Chukwuma Ifeanyi, Project Manager</span>
-            </div>
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"Jasmine's creativity and problem-solving skills are outstanding!"</p>
-                <span>- Sansaliu Basit, Senior Frontend Developer</span>
-            </div>
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"A true professional! She transformed our website beautifully."</p>
-                <span>- Amaka Okonkwo, Creative Director</span>
-            </div>
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"Jasmine is one of the best developers I've worked with—detail-oriented and efficient."</p>
-                <span>- Abdulrahman Yusuf, Senior Software Developer</span>
-            </div>
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"Her coding skills are impressive, and she always finds innovative solutions."</p>
-                <span>- Tobi Oladipo, UX/UI Designer</span>
-            </div>
-
-            <!-- testimonial -->
-            <div class="testimonial">
-                <p>"Jasmine's technical expertise and professionalism make her stand out!"</p>
-                <span>- Kelechi Nwosu, IT Consultant</span>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- contact -->
-    <div id="contact" class="contact">
-        <h2>Contact Me</h2>
-
-        <!-- form -->
-<form action="https://formsubmit.co/e660851cef69e2b6378478e36476f765" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required />
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required />
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" placeholder="Your message here..." required></textarea>
-
-    <button type="submit">Send Message</button>
-
-    <!-- Thank You Page -->
-    <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
-
-    <!-- Disable reCAPTCHA -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <!-- Autoresponse Email -->
-    <input type="hidden" name="_autoresponse" value="Thank you for reaching out! I'll respond as soon as possible.">
-</form>
-
-    </div>
-
-    <!-- footer -->
-    <footer>
-        <p>&copy; 2025 Adebowale Jasmine. All rights reserved.</p>
-        <p>Email: adebowalejasmine437@gmail.com </p>
-        <p>Designed By: Adebowale Jasmine</p>
-    </footer>
-
-    <!-- js script -->
-    <script src="script.js"></script>
 </body>
-
 </html>
