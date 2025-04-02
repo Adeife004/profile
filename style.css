@@ -5,10 +5,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: "Lato", sans-serif;
-    /* overflow: hidden; */
 }
-
-
 
 body {
     background: #fff2f2;
@@ -18,34 +15,10 @@ body {
     overflow-x: hidden;
 }
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #2d336b;
-}
-
-.menu-icon,
-.close-icon {
-    transition: opacity 0.3s ease;
-}
-
-.hidden {
-    display: none;
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-    color: #2d336b;
-    text-decoration: none;
-}
-
-/* Nav */
+/* Navbar Styles */
 nav {
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -54,6 +27,44 @@ nav {
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease-in-out;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+/* Navbar Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d336b;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo Underline Animation */
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #2d336b;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Nav List */
@@ -65,6 +76,12 @@ nav ul {
     padding: 0;
 }
 
+/* Nav Items */
+nav ul li {
+    position: relative;
+    overflow: hidden;
+}
+
 /* Nav Links */
 nav ul li a {
     color: #2d336b;
@@ -73,23 +90,95 @@ nav ul li a {
     font-weight: 600;
     padding: 8px 12px;
     border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
 }
 
-/* Hover Effect */
+/* Underline Hover Effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #2d336b;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Glowing Effect on Hover */
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(45, 51, 107, 0.2);
     text-decoration: none;
+    box-shadow: 0 0 10px rgba(45, 51, 107, 0.4);
+    color: #1c1f4a;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #2d336b;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* hero */
+.menu-icon,
+.close-icon {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-In Staggered Effect for Links */
+nav ul li {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Staggered Delay */
+nav ul li:nth-child(1) { animation-delay: 0.2s; }
+nav ul li:nth-child(2) { animation-delay: 0.4s; }
+nav ul li:nth-child(3) { animation-delay: 0.6s; }
+nav ul li:nth-child(4) { animation-delay: 0.8s; }
+nav ul li:nth-child(5) { animation-delay: 1s; }
+nav ul li:nth-child(6) { animation-delay: 1.2s; }
+
+/* Keyframes for Staggered Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Hero Section */
 .hero {
     margin-top: 50px;
     display: flex;
@@ -98,8 +187,10 @@ nav ul li a:hover {
     text-align: center;
     gap: 10px;
     padding: 60px 100px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
+/* Hero Heading */
 .hero-heading {
     width: 50%;
     display: flex;
@@ -109,86 +200,91 @@ nav ul li a:hover {
     justify-content: center;
 }
 
+/* Hero Text */
 .hero-text {
     margin: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: start;
+    animation: slideRight 1s ease-in-out;
 }
 
 .hero-text h1 {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .hero-text h1 span {
     font-size: 55px;
     text-transform: uppercase;
+    display: inline-block;
+    background: linear-gradient(90deg, #2d336b, #7886c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 2s infinite alternate ease-in-out;
 }
 
+/* Hero Paragraph */
 .hero-text p {
     font-size: 14px;
     margin-bottom: 20px;
     color: #b7b3b3;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Hero Buttons */
 .hero-btn {
     display: flex;
     justify-content: center;
     gap: 10px;
+    animation: bounceIn 1.5s ease-in-out;
 }
 
+/* Download & Contact Buttons */
+.download-btn,
 .contact-btn {
-    color: #fff;
+    display: inline-block;
+    padding: 10px 30px;
     border-radius: 10px;
     font-size: 1rem;
-    padding: 10px 30px;
-    border: none;
-    cursor: pointer;
     text-decoration: none;
     transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 .download-btn {
-    display: inline-block;
     background: #2d336b;
     color: white;
-    padding: 10px 30px;
-    border-radius: 10px;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
 }
 
 .download-btn:hover {
     background: #7886c7;
 }
 
-
-.hero-btn .btn1 {
-    background: #2d336b;
-}
-
+/* Glowing Hover Effect */
 .contact-btn {
     background: #7886c7;
-}
-
-.hero-btn .btn1:hover {
-    background: #7886c7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 .contact-btn:hover {
     background: #2d336b;
+    box-shadow: 0 0 15px rgba(45, 51, 107, 0.6);
 }
 
-/* hero-links */
+/* Hero Links */
 .hero-links {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 15px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .hero-links a i {
@@ -198,13 +294,6 @@ nav ul li a:hover {
     color: #fff;
     font-size: 18px;
     padding: 5px;
-    text-decoration: none;
-}
-
-.instagram a,
-.tiktok a,
-.github a,
-.linkedin a {
     text-decoration: none;
 }
 
@@ -218,7 +307,15 @@ nav ul li a:hover {
     height: 30px;
     background: #7886c7;
     border-radius: 50px;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.github a, 
+.tiktok a,
+.linkedin a,
+.instagram a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .github:hover,
@@ -226,10 +323,13 @@ nav ul li a:hover {
 .linkedin:hover,
 .instagram:hover {
     background: #2d336b;
+    transform: rotate(360deg);
 }
 
+/* Hero Image */
 .hero-image {
     width: 50%;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero-image img {
@@ -239,19 +339,97 @@ nav ul li a:hover {
     object-fit: cover;
     border: 4px solid #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 3s infinite alternate ease-in-out;
+    overflow: hidden;
 }
 
-/* about */
+/* ==================== ANIMATIONS ==================== */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-in from below */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide in from the right */
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bouncing Button Effect */
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px rgba(45, 51, 107, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(120, 134, 199, 0.9);
+    }
+}
+
+/* Pulse Animation for Image */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    to {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* About Section */
 .about {
     background: #eee;
     padding: 60px 100px;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* About Title */
 .about h2 {
     font-size: 28px;
     margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    animation: slideDown 1s ease-in-out;
 }
 
+/* About Container */
 .about-container {
     display: flex;
     justify-content: center;
@@ -260,33 +438,118 @@ nav ul li a:hover {
     gap: 10px;
 }
 
+/* About Image Container */
 .about-image {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: zoomIn 1.2s ease-in-out;
 }
 
+/* Image Wrapper */
 .aboutImage {
     width: 50%;
+    position: relative;
 }
 
+/* About Image */
 .about-image img {
     width: 100%;
     object-fit: cover;
-
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: pulse 3s infinite alternate ease-in-out;
 }
 
+/* About Text */
 .about-text {
     width: 50%;
     text-align: justify;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-in-out forwards;
 }
 
+/* About Paragraph */
 .about-text p {
     color: #212121;
     font-size: 16px;
     line-height: 32px;
+    animation: textFadeIn 1.5s ease-in-out;
 }
+
+/* ==================== ANIMATIONS ==================== */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-in from below */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide down for title */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Zoom-in effect for images */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Subtle text appearance */
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation for image */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    to {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+}
+
 
 /* skills */
 .skills {
@@ -460,18 +723,22 @@ progress#vue-progress::-moz-progress-bar {
     object-fit: cover;
 }
 
-/* projects */
+/* Projects Section */
 .projects {
     padding: 60px 100px;
     background-color: #A9B5DF;
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Title Animation */
 .projects h2 {
     font-size: 28px;
     margin-bottom: 30px;
+    animation: slideDown 1s ease-in-out;
 }
 
+/* Project Grid */
 .project-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -480,19 +747,28 @@ progress#vue-progress::-moz-progress-bar {
     padding: 20px;
 }
 
+/* Project Link */
 .project-link {
     text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-in-out forwards;
 }
 
-/* project */
+.project-link a {
+    text-decoration: none;
+}
+
+/* Project Box */
 .project {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 1.2s ease-in-out;
 }
 
+/* Project Image */
 .project-image {
     padding: 10px 16px;
 }
@@ -502,45 +778,33 @@ progress#vue-progress::-moz-progress-bar {
     height: auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: transform 0.5s ease-in-out;
 }
 
+/* Project Hover Effect */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Project Title */
 .project h3 {
     font-size: 18px;
-    color: #A9B5DF;
+    color: #2d336b;
 }
 
+/* Project Description */
 .project p {
     font-size: 0.95rem;
     color: #666;
     padding: 0 10px 15px;
 }
 
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.project-link a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-}
-
-.project-image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project p {
-    font-size: 14px;
-    color: #555;
-    margin: 10px 0;
-}
-
+/* Button Effect */
 .project a {
     display: inline-block;
     padding: 8px 15px;
@@ -549,12 +813,61 @@ progress#vue-progress::-moz-progress-bar {
     border-radius: 5px;
     text-decoration: none;
     font-size: 14px;
-    transition: 0.3s;
+    transition: background 0.3s ease-in-out;
 }
 
 .project a:hover {
     background: #1f264a;
 }
+
+/* ==================== ANIMATIONS ==================== */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide down effect for title */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in from below */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Zoom-in effect */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 /* testimonials */
 .testimonials {
@@ -602,17 +915,23 @@ progress#vue-progress::-moz-progress-bar {
     color: #555;
 }
 
+/* Contact Section */
 .contact {
     background: #A9B5DF;
     width: 100%;
     padding: 60px 100px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Title Animation */
 .contact h2 {
     font-size: 28px;
     margin-bottom: 30px;
+    animation: slideDown 1s ease-in-out;
 }
 
+/* Contact Form */
 form {
     width: 50%;
     display: flex;
@@ -621,16 +940,29 @@ form {
     text-align: start;
     color: #212121;
     gap: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-in-out forwards;
 }
 
+/* Input Fields */
 .contact input,
 .contact textarea {
     border: none;
     border-radius: 12px;
     padding: 10px 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Input Focus Animation */
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border: 2px solid #2d336b;
+    transform: scale(1.02);
+}
+
+/* Submit Button */
 form button {
     margin-top: 10px;
     padding: 15px 20px;
@@ -638,28 +970,96 @@ form button {
     border-radius: 10px;
     border: none;
     background: #2d336b;
-    transition: 0.2 ease-in-out;
+    transition: 0.3s ease-in-out;
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
 }
 
-.contact input:focus,
-.contact textarea:focus {
-    outline: none;
-    border-color: #2d336b;
+/* Button Hover Animation */
+form button:hover {
+    background: #1f264a;
+    transform: scale(1.05);
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide down effect for title */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in from below */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
-/* footer */
+
+/* Footer */
 footer {
     background: #2D336B;
     color: #fff;
     padding: 20px;
     text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
+/* Footer Paragraphs */
 footer p {
-    margin: 0;
+    margin: 5px 0;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+footer p:hover {
+    color: #A9B5DF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Responsive Styles for All Screen Sizes */
